@@ -24,7 +24,7 @@ function SideBar({ onAddTask }) {
                     <span></span>
                     <span className='vertikal'></span>
                 </button>
-                Tilføj opgave
+                <p>Tilføj opgave</p>
             </div>
                         {/* Separator/divider mellem knappen og popup'en */}
             <div className='seperator'></div>
