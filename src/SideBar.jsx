@@ -29,6 +29,8 @@ function SideBar({ onAddTask }) {
                         {/* Separator/divider mellem knappen og popup'en */}
             <div className='seperator'></div>
 
+            <div className='circle-bg'></div>
+
                         {/* Popup komponenten der vises når isPopupOpen er sat til true */}
             <OpgaveInputPopUp isOpen={isPopupOpen} onClose={togglePopup} onAddTask={onAddTask} />
         </div>

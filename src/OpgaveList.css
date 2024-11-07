@@ -1,3 +1,5 @@
+
+
 h3 {
     color: black;
 }
@@ -68,4 +70,13 @@ ul {
 .type-li {
     display: flex;
     justify-content: center;
+}
+
+
+@media (max-width: 900px) {
+    .task-ul, .headlines-container ul  {
+        width: 100%;
+        box-sizing: border-box;
+
+    }
 }

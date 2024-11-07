@@ -1,3 +1,11 @@
 .App {
   padding-left: 220px;
 }
+
+@media (max-width: 900px) {
+  .App {
+    padding-left: 0px;
+  }}
+
+
+  
