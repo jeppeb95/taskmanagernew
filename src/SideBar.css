@@ -1,0 +1,74 @@
+/*Styling af sidebar*/
+.SideBar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 100vh;
+    background: #003F73;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px; 
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*Styling af plus knappen*/
+
+.plusButton {
+    position: relative;
+    background: transparent;
+    border: none;
+    cursor: pointer; 
+    padding: 0; 
+    outline: none;
+    width: 50px;
+    height: 50px;
+}
+
+.plusButton span {
+    width: 50px;
+    height: 5px;
+    background: white;
+    position: absolute;
+    transform: translate(-50%, -50%); 
+    border-radius: 10px;
+    transition: all ease-in 0.2s;
+}
+
+.plusButton span.vertikal {
+    transform: translate(-50%, -50%) rotate(90deg);    
+}
+
+.plusButton:hover span {
+    background: #0cff71;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+
+.seperator {
+    height: 1px;
+    width: 70%;
+    background: white;
+}
+
+/*Styling af overlay*/
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); 
+    z-index: 1;
+}

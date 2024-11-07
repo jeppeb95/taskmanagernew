@@ -1,0 +1,59 @@
+.OpgaveInputPopUp {
+    display: flex;
+    flex-direction: column;
+    background: #003F73;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); 
+    border-radius: 30px;
+    padding: 30px 100px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    width: 33vw;
+    z-index: 999;
+}
+
+.OpgaveInputPopUp h2 {
+    color: white;
+}
+
+input, select, textarea {
+    padding: 10px;
+    background-color: white;
+    color: rgb(39, 39, 39);
+    border-radius: 10px;
+    resize: none;
+    font-family: "Poppins", sans-serif;
+
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.fields-container {
+    display: flex;
+    gap: 20px;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+
+label {
+    display: flex;
+    font-weight: 500;
+}
+
+.field-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#taskDescription {
+    height: 100px;
+}
