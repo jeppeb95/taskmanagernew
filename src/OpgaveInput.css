@@ -60,10 +60,10 @@ label {
     height: 100px;
 }
 
+
 @media (max-width: 900px) {
     body {
         justify-content: center;
-        width: 100vw;
         place-items: flex-start;
     }
 
