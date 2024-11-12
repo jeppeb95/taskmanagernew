@@ -1,10 +1,8 @@
-
-
 h3 {
     color: black;
 }
 
-
+/*Styling af boxen som viser info om opgave*/
 .task-ul {
     display: grid;
     gap: 20px;
@@ -36,7 +34,7 @@ ul {
 .headlines-container {
     color: black;
 }
-
+/*Styling af den usynlige box hvori kategorierne/overskrifterne vises*/
 .headlines-container ul {
     list-style-type: none;
     display: grid;
@@ -101,6 +99,8 @@ ul {
 .priority-class.høj {
     background-color: #FF6262;
 }
+
+/*Mobil styling af opgavelisten*/
 
 @media (max-width: 900px) {
     .task-ul  {
