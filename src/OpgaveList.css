@@ -16,6 +16,7 @@ h3 {
     width: calc(100vw - 280px);
     text-align: center;
     font-size: 13px;
+    position: relative;
 } 
 
 .type-prio-wrapper {
@@ -98,6 +99,44 @@ ul {
 /* Styling af høj prioritet*/
 .priority-class.høj {
     background-color: #FF6262;
+}
+
+.edit-button {
+    background-color: transparent;
+    position: absolute;
+    right: 10px;
+    top: 50%; 
+    transform: translateY(-50%);
+    border: none;
+    cursor: pointer;
+    width: auto;
+    height: 20px;
+    padding: 0;
+}
+
+.edit-button:hover {
+    background: transparent;
+}
+
+.edit-button img {
+    width: 20px;
+    height: auto;
+    transition: transform 0.2s ease-in;
+}
+
+.edit-button img:hover {
+    transform: scale(1.2);
+}
+
+
+.save-btn {
+    width: fit-content;
+}
+
+
+.btn-wrapper {
+    display: flex;
+    gap: 6px;
 }
 
 /*Mobil styling af opgavelisten*/
