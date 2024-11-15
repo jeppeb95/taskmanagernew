@@ -139,9 +139,10 @@ ul {
     gap: 6px;
 }
 
+/*Styling af sorteringsknapper*/
 .sort-buttons button {
-    background-color: #003F73; /* Blå farve */
-    color: white; /* Hvid tekst */
+    background-color: #003F73;
+    color: white;
     border: none;
     padding: 10px 20px;
     border-radius: 25px;
@@ -152,9 +153,8 @@ ul {
 }
 
 .sort-buttons button:hover {
-    background-color: #002b50; /* Mørkere blå ved hover */
+    background-color: #002b50;
 }
-
 
 /*Mobil styling af opgavelisten*/
 
