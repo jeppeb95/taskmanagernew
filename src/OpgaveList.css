@@ -139,6 +139,23 @@ ul {
     gap: 6px;
 }
 
+.sort-buttons button {
+    background-color: #003F73; /* Blå farve */
+    color: white; /* Hvid tekst */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+}
+
+.sort-buttons button:hover {
+    background-color: #002b50; /* Mørkere blå ved hover */
+}
+
+
 /*Mobil styling af opgavelisten*/
 
 @media (max-width: 900px) {
