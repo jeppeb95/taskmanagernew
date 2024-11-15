@@ -2,23 +2,42 @@ h3 {
     color: black;
 }
 
+/*Styling af sorteringsknapper og container*/
+.sort-buttons {
+    display: flex;
+    color: black;
+}
+
+.sort-buttons p {
+    padding-right: 15px;
+}
+
+.sort-buttons-container {
+    display: flex;
+    align-items: center;
+}
+
 /*Styling af boxen som viser info om opgave*/
 .task-ul {
     display: grid;
     gap: 20px;
     grid-template-columns: 3fr 1fr 1fr 1fr;
-    width: calc(100vw - 280px);
     color: black;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
     padding: 12px 20px;
     border-radius: 50px;
     margin-bottom: 10px;
-    width: calc(100vw - 280px);
+    width: calc(100vw - 290px);
     text-align: center;
     font-size: 13px;
     position: relative;
 } 
 
+
+.list-wrapper{
+    padding-bottom: 30px;
+
+}
 .type-prio-wrapper {
         display: contents;
     }
@@ -41,7 +60,7 @@ ul {
     display: grid;
     gap: 20px;
     grid-template-columns: 3fr 1fr 1fr 1fr;
-    width: calc(100vw - 280px);
+    width: calc(100vw - 290px);
     padding: 12px 20px;
     font-size: 14px;
     color: rgb(44, 44, 44);
@@ -139,26 +158,9 @@ ul {
     gap: 6px;
 }
 
-/*Styling af sorteringsknapper*/
-.sort-buttons button {
-    background-color: #003F73;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 25px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-right: 10px;
-}
-
-.sort-buttons button:hover {
-    background-color: #002b50;
-}
-
 /*Mobil styling af opgavelisten*/
 
-@media (max-width: 900px) {
+@media (max-width: 980px) {
     .task-ul  {
         box-sizing: border-box;
         display: flex;
@@ -204,4 +206,15 @@ ul {
 
     
 
+}
+@media (max-width: 401px) {
+
+.sort-buttons {
+    flex-direction: column;
+}
+
+.sort-buttons p {
+    margin-bottom: 2px;
+    margin-top: 0;
+}
 }

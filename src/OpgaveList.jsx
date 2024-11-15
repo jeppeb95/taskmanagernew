@@ -39,14 +39,23 @@ function OpgaveList({ tasks, onClearTasks, onUpdateTask, onRemoveTask }) {
     };
 
     return (
-        <div>
-            <h3>Opgaveliste</h3>
+        <div className='list-wrapper'>
+            <h3>Opgaveliste</h3> 
 
             {/* Sorteringsknapper */}
             <div className="sort-buttons">
-                <button onClick={() => setSortCriteria("dato")}>Sortér efter dato</button>
-                <button onClick={() => setSortCriteria("prioritet")}>Sortér efter prioritet</button>
-                <button onClick={() => setSortCriteria("type")}>Sortér efter type</button>
+                <p>Sortér efter: </p>
+                <div className='sort-buttons-container'>
+                <button onClick={() => setSortCriteria("dato")}
+                      className="global-button"
+                >Dato</button>
+                <button onClick={() => setSortCriteria("prioritet")}
+                    className="global-button"
+                    >Prioritet</button>
+                <button onClick={() => setSortCriteria("type")}
+                    className="global-button"
+                    >Type</button>
+                    </div>
             </div>
 
             <div className='headlines-container'>
@@ -97,8 +106,8 @@ function OpgaveList({ tasks, onClearTasks, onUpdateTask, onRemoveTask }) {
                                     <option value="Lav">Lav</option>
                                 </select>   
                                 <div className='btn-wrapper'>
-                                    <button onClick={handleSaveClick} className='save-btn'>Gem</button>
-                                    <button onClick={() => onRemoveTask(index)} className="delete-btn">
+                                    <button onClick={handleSaveClick} className='save-btn global-button'>Gem</button>
+                                    <button onClick={() => onRemoveTask(index)} className="delete-btn global-button">
                                         Slet
                                     </button>
                                 </div>
@@ -120,7 +129,7 @@ function OpgaveList({ tasks, onClearTasks, onUpdateTask, onRemoveTask }) {
                     </li>
                 ))}
             </ul>
-            <button className="clearButton" onClick={onClearTasks}>Ryd opgaveliste</button>
+            <button className="clearButton global-button" onClick={onClearTasks}>Ryd opgaveliste</button>
         </div>
     );
 }

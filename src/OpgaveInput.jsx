@@ -63,8 +63,12 @@ function OpgaveInputPopUp({ isOpen, onClose, onAddTask }) {
                     <textarea id="taskDescription" value={formValues.taskDescription} onChange={handleChange} rows="5"></textarea>
 
                     <div className='button-container'>
-                        <button type="submit">Opret opgave</button>
-                        <button type="button" onClick={onClose}>Luk</button>
+                        <button type="submit"
+                        className="global-button form-btn"
+                        >Opret opgave</button>
+                        <button type="button" onClick={onClose}
+                        className="global-button form-btn"
+                        >Luk</button>
                     </div>
                 </form>
             </div>
