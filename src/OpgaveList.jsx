@@ -44,9 +44,9 @@ function OpgaveList({ tasks, onClearTasks, onUpdateTask, onRemoveTask }) {
 
             {/* Sorteringsknapper */}
             <div className="sort-buttons">
-                <button onClick={() => setSortCriteria("dato")}>Sortér efter Dato</button>
-                <button onClick={() => setSortCriteria("prioritet")}>Sortér efter Prioritet</button>
-                <button onClick={() => setSortCriteria("type")}>Sortér efter Type</button>
+                <button onClick={() => setSortCriteria("dato")}>Sortér efter dato</button>
+                <button onClick={() => setSortCriteria("prioritet")}>Sortér efter prioritet</button>
+                <button onClick={() => setSortCriteria("type")}>Sortér efter type</button>
             </div>
 
             <div className='headlines-container'>
