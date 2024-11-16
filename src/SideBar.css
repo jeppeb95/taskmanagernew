@@ -56,9 +56,10 @@
     gap: 4px;
     font-size: 14px;
     padding-bottom: 20px;
-    p{
+}
+.buttonContainer p {
         color: white;
-    }
+
 }
 
 .seperator {
