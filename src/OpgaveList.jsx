@@ -8,6 +8,8 @@ function OpgaveList({ tasks, onClearTasks, onUpdateTask, onRemoveTask }) {
     const [editedTask, setEditedTask] = useState({}); /* Holder data for redigeringen */
     const [sortCriteria, setSortCriteria] = useState(null);
 
+    
+
     /* Funktion der sorterer opgaverne ud fra dato, prioritet og type samt efter om de er markeret som completed*/
     const sortedTasks = [...tasks].sort((a, b) => {
         /* Sortere først efter om opgaven er completed */
@@ -81,20 +83,43 @@ function OpgaveList({ tasks, onClearTasks, onUpdateTask, onRemoveTask }) {
             </div>
 
             <ul className="tasks-list">
-                {sortedTasks.map((task) => (
-                    <OpgaveItem
-                        key={task.id} /* Brug task.id i stedet for index */
-                        task={task}
-                        editingIndex={editingIndex}
-                        editedTask={editedTask}
-                        onCompleteTask={handleCompleteTask}
-                        onEditClick={handleEditClick}
-                        onInputChange={handleInputChange}
-                        onSaveClick={handleSaveClick}
-                        onRemoveTask={onRemoveTask}
-                    />
-                ))}
-            </ul>
+    {/* Hvis der ikke er nogen opgaver, tilføjes en eksempelopgave */}
+    {tasks.length === 0 ? (
+        <OpgaveItem
+            key="example"
+            task={{
+                id: Date.now(),
+                taskTitle: "Eksempelopgave",
+                dueDate: new Date().toISOString().split('T')[0], 
+                priority: "Lav",
+                taskType: "Andet",
+                completed: false
+            }}
+            editingIndex={editingIndex}
+            editedTask={editedTask}
+            onCompleteTask={handleCompleteTask}
+            onEditClick={handleEditClick}
+            onInputChange={handleInputChange}
+            onSaveClick={handleSaveClick}
+            onRemoveTask={onRemoveTask}
+        />
+    ) : (
+        sortedTasks.map((task) => (
+            <OpgaveItem
+                key={task.id}
+                task={task}
+                editingIndex={editingIndex}
+                editedTask={editedTask}
+                onCompleteTask={handleCompleteTask}
+                onEditClick={handleEditClick}
+                onInputChange={handleInputChange}
+                onSaveClick={handleSaveClick}
+                onRemoveTask={onRemoveTask}
+            />
+        ))
+    )}
+</ul>
+
 
             {/* Knap der kalder på funktionen der rydder opgavelisten */}
             <button className="clearButton global-button" onClick={onClearTasks}>Ryd opgaveliste</button>

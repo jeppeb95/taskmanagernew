@@ -141,11 +141,11 @@ ul {
     padding: 5px;
     border-radius: 50%;
     display: inline-flex;
-    transition: filter 0.2s ease;
+    transition: filter 0.3s ease;
 }
 
 .edit-button:hover img {
-    filter: brightness(0) saturate(100%) invert(58%) sepia(98%) saturate(608%) hue-rotate(54deg) brightness(92%) contrast(113%);
+    filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(324deg) brightness(96%) contrast(104%);
 }
 .edit-button img {
     width: 20px;
@@ -153,9 +153,10 @@ ul {
     transition: transform 0.2s ease-in;
 }
 
-.button1:hover img {
-    filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(324deg) brightness(96%) contrast(104%);
+.button2:hover img {
+    filter: brightness(0) saturate(100%) invert(58%) sepia(98%) saturate(608%) hue-rotate(54deg) brightness(92%) contrast(113%);
 } 
+
 
 .button-ul-wrapper {
     display: flex;
@@ -188,11 +189,15 @@ ul {
 .task-ul.completed .task-title,
 .task-ul.completed .date-class {
     text-decoration: line-through; 
-    color: #999;
+    color: #727272;
 }
 
 .task-ul.completed .button2 img {
     filter: brightness(0) saturate(100%) invert(58%) sepia(98%) saturate(608%) hue-rotate(54deg) brightness(92%) contrast(113%);
+}
+
+.task-ul .button2 img {
+    filter: grayscale(1);
 }
 
 /*Mobil styling af opgavelisten*/
