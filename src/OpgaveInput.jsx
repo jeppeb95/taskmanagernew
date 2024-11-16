@@ -19,9 +19,16 @@ function OpgaveInputPopUp({ isOpen, onClose, onAddTask }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        onAddTask(formValues); /*Sender opgaven til App.js via prop*/
+
+        /*Opretter opgaven med et ID ved hjælp af Date.now() funktionen*/
+        const taskWithId = {
+            ...formValues,
+            id: Date.now() /* Date.now funktionen giver id ud fra tid*/
+        };
+
+        onAddTask(taskWithId);  /*Sender opgaven til forældrekomponenten*/
         setFormValues({ taskTitle: '', priority: '', dueDate: '', taskType: '', taskDescription: '' });
-        onClose(); /* Lukker popup efter tilføjelse */
+        onClose();  /*Lukker popup efter tilføjelse*/
     };
 
     return (
@@ -63,12 +70,12 @@ function OpgaveInputPopUp({ isOpen, onClose, onAddTask }) {
                     <textarea id="taskDescription" value={formValues.taskDescription} onChange={handleChange} rows="5"></textarea>
 
                     <div className='button-container'>
-                        <button type="submit"
-                        className="global-button form-btn"
-                        >Opret opgave</button>
-                        <button type="button" onClick={onClose}
-                        className="global-button form-btn"
-                        >Luk</button>
+                        <button type="submit" className="global-button form-btn">
+                            Opret opgave
+                        </button>
+                        <button type="button" onClick={onClose} className="global-button form-btn">
+                            Luk
+                        </button>
                     </div>
                 </form>
             </div>

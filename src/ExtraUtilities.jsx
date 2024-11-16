@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import SideBar from './SideBar';
 import OpgaveList from './OpgaveList';
-import './App.css';
+import './ExtraUtilities.css';
 
-function App() {
+function ExtraUtilities() {
   /*State til opgaverne*/
   const [tasks, setTasks] = useState([]);
 
@@ -31,23 +31,34 @@ function App() {
   };
 
   /* Opdater en opgave*/
-  const handleUpdateTask = (index, updatedTask) => {
-    const updatedTasks = tasks.map((task, i) => (i === index ? updatedTask : task));
-    setTasks(updatedTasks);
-    localStorage.setItem('tasks', JSON.stringify(updatedTasks));
-  };
-
-  /* Slet opgave knap*/
-  const handleRemoveTask = (index) => {
-    const updatedTasks = tasks.filter((task, taskIndex) => taskIndex !== index);
+  const handleUpdateTask = (taskId, updatedTask) => {
+    const updatedTasks = tasks.map((task) => 
+        task.id === taskId ? updatedTask : task
+    );
     setTasks(updatedTasks);
     localStorage.setItem('tasks', JSON.stringify(updatedTasks));
 };
 
+
+  /* Slet opgave funktion*/
+  const handleRemoveTask = (index) => {
+    
+    /*Bekræftelse af sletning*/
+    const confirmDelete = window.confirm("Er du sikker på, at du vil slette denne opgave?");
+    
+    /*Hvis brugeren bekræfter sletning*/
+    if (confirmDelete) {
+        const updatedTasks = tasks.filter((task, taskIndex) => taskIndex !== index);
+        setTasks(updatedTasks);
+        localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+    }
+};
+
+
   return (
     <div style={{ display: 'flex' }}>
       <SideBar onAddTask={handleAddTask} />
-      <div className="App">
+      <div className="ExtraUtilities">
       <OpgaveList 
           tasks={tasks} 
           onClearTasks={handleClearTasks} 
@@ -59,4 +70,4 @@ function App() {
   );
 }
 
-export default App;
+export default ExtraUtilities;

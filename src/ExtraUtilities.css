@@ -1,9 +1,9 @@
-.App {
+.ExtraUtilities {
   padding-left: 220px;
 }
 
 @media (max-width: 900px) {
-  .App {
+  .ExtraUtilities {
     padding-left: 0px;
     padding-bottom: 130px;
   }}
