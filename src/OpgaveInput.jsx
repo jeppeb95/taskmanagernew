@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './OpgaveInput.css';
 
+
+/* Funktion der åbner state til at holde værdierne i formularen */
 function OpgaveInputPopUp({ isOpen, onClose, onAddTask }) {
     const [formValues, setFormValues] = useState({
         taskTitle: '',
@@ -10,13 +12,15 @@ function OpgaveInputPopUp({ isOpen, onClose, onAddTask }) {
         taskDescription: ''
     });
 
+    /* Opdaterer state, når brugeren ændrer værdier i formularfelterne */
     const handleChange = (e) => {
         setFormValues({
             ...formValues,
             [e.target.id]: e.target.value
         });
     };
-
+    
+    /* Håndterer formularens afsendelse */
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -33,6 +37,7 @@ function OpgaveInputPopUp({ isOpen, onClose, onAddTask }) {
 
     return (
         isOpen && (
+            /*Formular og felter i popup*/
             <div className="OpgaveInputPopUp">
                 <h2>Tilføj opgave</h2>
                 <form onSubmit={handleSubmit}>
@@ -101,6 +106,7 @@ function OpgaveInputPopUp({ isOpen, onClose, onAddTask }) {
                     aria-label="Skriv beskrivelse af opgaven"
                     ></textarea>
 
+                    {/*Knap der opretter opgaven med de indtastede data*/}
                     <div className='button-container'>
                         <button 
                         type="submit" 
@@ -109,6 +115,8 @@ function OpgaveInputPopUp({ isOpen, onClose, onAddTask }) {
                         >
                             Opret opgave
                         </button>
+
+                        {/*Knap der lukker popup*/}
                         <button 
                         type="button" 
                         onClick={onClose} 

@@ -1,7 +1,9 @@
+/*Styling af Extrautilities div*/
 .ExtraUtilities {
   padding-left: 220px;
 }
 
+/*Mobilstyling af Extrautilities div*/
 @media (max-width: 900px) {
   .ExtraUtilities {
     padding-left: 0px;
