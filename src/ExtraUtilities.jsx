@@ -41,15 +41,15 @@ function ExtraUtilities() {
 
 
   /* Slet opgave funktion*/
-  const handleRemoveTask = (index) => {
+  const handleRemoveTask = (id) => {
     
     /*Bekræftelse af sletning*/
     const confirmDelete = window.confirm("Er du sikker på, at du vil slette denne opgave?");
     
     /*Hvis brugeren bekræfter sletning*/
     if (confirmDelete) {
-        const updatedTasks = tasks.filter((task, taskIndex) => taskIndex !== index);
-        setTasks(updatedTasks);
+      const updatedTasks = tasks.filter((task) => task.id !== id);
+      setTasks(updatedTasks);
         localStorage.setItem('tasks', JSON.stringify(updatedTasks));
     }
 };

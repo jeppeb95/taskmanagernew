@@ -9,7 +9,7 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
     border: none;
-    z-index: 1;
+    z-index: 999;
   }
   
   /* Slider cirklen */
@@ -68,5 +68,6 @@
         top: 15px;
         right: 10px;
         left: auto;
+        z-index: 1;
     }
   }

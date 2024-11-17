@@ -36,11 +36,6 @@ h3 {
     
 } 
 
-
-main{
-    padding-bottom: 30px;
-
-}
 .type-prio-wrapper {
         display: contents;
     }
@@ -153,10 +148,6 @@ ul {
     transition: transform 0.2s ease-in;
 }
 
-.button2:hover img {
-    filter: brightness(0) saturate(100%) invert(58%) sepia(98%) saturate(608%) hue-rotate(54deg) brightness(92%) contrast(113%);
-} 
-
 
 .button-ul-wrapper {
     display: flex;
@@ -196,9 +187,9 @@ ul {
     filter: brightness(0) saturate(100%) invert(58%) sepia(98%) saturate(608%) hue-rotate(54deg) brightness(92%) contrast(113%);
 }
 
-.task-ul .button2 img {
-    filter: grayscale(1);
-}
+.task-ul .button2:hover img {
+    filter: brightness(0) saturate(100%) invert(58%) sepia(98%) saturate(608%) hue-rotate(54deg) brightness(92%) contrast(113%);
+} 
 
 /*Mobil styling af opgavelisten*/
 
@@ -245,6 +236,8 @@ ul {
     }
 
 }
+
+
 @media (max-width: 401px) {
 
 .sort-buttons {
@@ -261,4 +254,16 @@ ul {
     flex-direction: row;
 }
 
+}
+
+/*Styling af fuldfør knappen på touch enheder*/
+
+@media (hover: none) {
+    .task-ul .button2:hover img {
+        filter: none;
+    }
+
+    .task-ul.completed .button2 img {
+        filter: brightness(0) saturate(100%) invert(58%) sepia(98%) saturate(608%) hue-rotate(54deg) brightness(92%) contrast(113%);
+    }
 }
