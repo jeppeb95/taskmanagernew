@@ -1,7 +1,7 @@
 .OpgaveInputPopUp {
     display: flex;
     flex-direction: column;
-    background: #003F73;
+    background: var(--theme-main-color);
     position: fixed;
     left: 50%;
     top: 50%;

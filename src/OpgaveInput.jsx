@@ -39,7 +39,12 @@ function OpgaveInputPopUp({ isOpen, onClose, onAddTask }) {
                     <div className='fields-container'>
                         <div className='field-wrapper'>
                             <label htmlFor="priority">Prioritet</label>
-                            <select id="priority" value={formValues.priority} onChange={handleChange} required>
+                            <select 
+                            id="priority" 
+                            value={formValues.priority} 
+                            onChange={handleChange} 
+                            required 
+                            aria-label="Vælg opgavens prioritet">
                                 <option value="" disabled hidden>Vælg prioritet</option>
                                 <option value="Lav">Lav</option>
                                 <option value="Middel">Middel</option>
@@ -49,12 +54,24 @@ function OpgaveInputPopUp({ isOpen, onClose, onAddTask }) {
 
                         <div className='field-wrapper'>
                             <label htmlFor="dueDate">Forfaldsdato</label>
-                            <input type="date" id="dueDate" value={formValues.dueDate} onChange={handleChange} required />
+                            <input 
+                            type="date" 
+                            id="dueDate" 
+                            value={formValues.dueDate} 
+                            onChange={handleChange} 
+                            required
+                            aria-label="Vælg opgavens forfaldsdato"
+                             />
                         </div>
                     </div>
 
                     <label htmlFor="taskType">Opgavetype</label>
-                    <select id="taskType" value={formValues.taskType} onChange={handleChange} required>
+                    <select 
+                    id="taskType" 
+                    value={formValues.taskType} 
+                    onChange={handleChange} 
+                    required
+                    aria-label="Vælg opgavens type">
                         <option value="" disabled hidden>Vælg opgavetype</option>
                         <option value="Personlige opgaver">Personlige opgaver</option>
                         <option value="Arbejdsopgaver">Arbejdsopgaver</option>
@@ -64,16 +81,40 @@ function OpgaveInputPopUp({ isOpen, onClose, onAddTask }) {
                     </select>
 
                     <label htmlFor="taskTitle">Overskrift på opgaven</label>
-                    <input type="text" id="taskTitle" value={formValues.taskTitle} onChange={handleChange} required />
+                    <input 
+                    type="text" 
+                    id="taskTitle"   
+                    placeholder="Opgavens overskrift" 
+                    value={formValues.taskTitle} 
+                    onChange={handleChange} 
+                    required
+                    aria-label="Skriv opgavens overskrift"
+                    />
 
                     <label htmlFor="taskDescription">Beskrivelse af opgaven</label>
-                    <textarea id="taskDescription" value={formValues.taskDescription} onChange={handleChange} rows="5"></textarea>
+                    <textarea 
+                    id="taskDescription"   
+                    placeholder="Beskrivelse af opgaven" 
+                    value={formValues.taskDescription} 
+                    onChange={handleChange} 
+                    rows="5"
+                    aria-label="Skriv beskrivelse af opgaven"
+                    ></textarea>
 
                     <div className='button-container'>
-                        <button type="submit" className="global-button form-btn">
+                        <button 
+                        type="submit" 
+                        className="global-button form-btn"
+                        aria-label="Opret opgave"
+                        >
                             Opret opgave
                         </button>
-                        <button type="button" onClick={onClose} className="global-button form-btn">
+                        <button 
+                        type="button" 
+                        onClick={onClose} 
+                        className="global-button form-btn"
+                        aria-label="Luk popup"
+                        >
                             Luk
                         </button>
                     </div>

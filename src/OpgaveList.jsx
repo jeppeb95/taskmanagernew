@@ -67,62 +67,44 @@ function OpgaveList({ tasks, onClearTasks, onUpdateTask, onRemoveTask }) {
     
     return (
         <div className='list-wrapper'>
-            <h3>Opgaveliste</h3>
+            <h3 aria-label="Liste med opgaver">Opgaveliste</h3>
 
             {/* Sorteringsknapper */}
-            <SortButtons setSortCriteria={setSortCriteria} />
+            <SortButtons setSortCriteria={setSortCriteria} aria-label="Sortér opgaver"/>
 
             {/* Den øverste bjælke med overskrift og sorteringsfunktionalitet */}
             <div className='headlines-container'>
                 <ul>
-                    <li className='description-element'>Overskrift</li>
-                    <li><button onClick={() => setSortCriteria("dato")}>Dato</button></li>
-                    <li><button onClick={() => setSortCriteria("type")}>Type</button></li>
-                    <li><button onClick={() => setSortCriteria("prioritet")}>Prioritet</button></li>
+                    <li className='description-element' aria-label="Opgaveoverskrift">Overskrift</li>
+                    <li><button onClick={() => setSortCriteria("dato")} aria-label="Sortér efter dato">Dato</button></li>
+                    <li><button onClick={() => setSortCriteria("type")} aria-label="Sortér efter type">Type</button></li>
+                    <li><button onClick={() => setSortCriteria("prioritet")} aria-label="Sortér efter proritet">Prioritet</button></li>
                 </ul>
             </div>
 
             <ul className="tasks-list">
-    {/* Hvis der ikke er nogen opgaver, tilføjes en eksempelopgave */}
-    {tasks.length === 0 ? (
-        <OpgaveItem
-            key="example"
-            task={{
-                id: Date.now(),
-                taskTitle: "Eksempelopgave",
-                dueDate: new Date().toISOString().split('T')[0], 
-                priority: "Lav",
-                taskType: "Andet",
-                completed: false
-            }}
-            editingIndex={editingIndex}
-            editedTask={editedTask}
-            onCompleteTask={handleCompleteTask}
-            onEditClick={handleEditClick}
-            onInputChange={handleInputChange}
-            onSaveClick={handleSaveClick}
-            onRemoveTask={onRemoveTask}
-        />
-    ) : (
-        sortedTasks.map((task) => (
-            <OpgaveItem
-                key={task.id}
-                task={task}
-                editingIndex={editingIndex}
-                editedTask={editedTask}
-                onCompleteTask={handleCompleteTask}
-                onEditClick={handleEditClick}
-                onInputChange={handleInputChange}
-                onSaveClick={handleSaveClick}
-                onRemoveTask={onRemoveTask}
-            />
-        ))
-    )}
-</ul>
-
+                {sortedTasks.map((task) => (
+                    <OpgaveItem
+                        key={task.id}
+                        task={task}
+                        editingIndex={editingIndex}
+                        editedTask={editedTask}
+                        onCompleteTask={handleCompleteTask}
+                        onEditClick={handleEditClick}
+                        onInputChange={handleInputChange}
+                        onSaveClick={handleSaveClick}
+                        onRemoveTask={onRemoveTask}
+                    />
+                ))}
+            </ul>
 
             {/* Knap der kalder på funktionen der rydder opgavelisten */}
-            <button className="clearButton global-button" onClick={onClearTasks}>Ryd opgaveliste</button>
+            <button 
+            className="clearButton global-button" 
+            onClick={onClearTasks}
+            aria-label="Ryd opgavelisten">
+            Ryd opgaveliste
+            </button>
         </div>
     );
 }

@@ -64,6 +64,7 @@ function ExtraUtilities() {
           onClearTasks={handleClearTasks} 
           onUpdateTask={handleUpdateTask} 
           onRemoveTask={handleRemoveTask}  
+          aria-label="Liste over opgaver"
         />      
         </div>
     </div>

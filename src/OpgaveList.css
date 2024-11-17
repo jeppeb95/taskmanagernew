@@ -1,11 +1,11 @@
 h3 {
-    color: black;
+    color: var(--text-color-dark);
 }
 
 /*Styling af sorteringsknapper og container*/
 .sort-buttons {
     display: flex;
-    color: black;
+    color: var(--text-color-dark);
 }
 
 .sort-buttons p {
@@ -24,7 +24,7 @@ h3 {
     display: grid;
     gap: 20px;
     grid-template-columns: 3fr 0.9fr 1.7fr 0.9fr;
-    color: black;
+    color: var(--text-color-dark);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
     padding: 25px 40px 25px 20px;
     border-radius: 50px;
@@ -55,7 +55,7 @@ ul {
 }
 
 .headlines-container {
-    color: black;
+    color: var(--text-color-grey);
 }
 /*Styling af den usynlige box hvori kategorierne/overskrifterne vises*/
 .headlines-container ul {
@@ -66,7 +66,7 @@ ul {
     width: calc(100vw - 310px);
     padding: 12px 20px;
     font-size: 14px;
-    color: rgb(44, 44, 44);
+    color: var(--text-color-grey);
     text-align: center;
 
 }
@@ -74,7 +74,7 @@ ul {
 .headlines-container ul li button {
     background-color: transparent;
     box-shadow: none;
-    color: rgb(44, 44, 44);
+    color: var(--text-color-grey);
     text-align: center;
     font-size: 14px;
     border: none;
@@ -137,7 +137,7 @@ ul {
     border: none;
     cursor: pointer;
     width: auto;
-    background-color: #003F73;
+    background-color: var(--theme-main-color);
     padding: 5px;
     border-radius: 50%;
     display: inline-flex;
@@ -189,7 +189,7 @@ ul {
 .task-ul.completed .task-title,
 .task-ul.completed .date-class {
     text-decoration: line-through; 
-    color: #727272;
+    color: var(--text-color-grey);
 }
 
 .task-ul.completed .button2 img {

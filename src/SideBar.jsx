@@ -15,12 +15,16 @@ function SideBar({ onAddTask }) {
     return (
         <div className="SideBar">
                         {/* Overlay som vises når popup er blevet åbnet */}
-                        {isPopupOpen && <div className="overlay" onClick={togglePopup}></div>}
+                        {isPopupOpen && <div className="overlay" onClick={togglePopup} aria-label="Luk popup"></div>}
 
 
                     {/* Knap til at åbne popup for at tilføje opgaver */}
             <div className='buttonContainer'>
-                <button className='plusButton' onClick={togglePopup}>
+                <button 
+                className='plusButton' 
+                onClick={togglePopup}
+                aria-label="Tilføj ny opgave"
+                >
                     <span></span>
                     <span className='vertikal'></span>
                 </button>
