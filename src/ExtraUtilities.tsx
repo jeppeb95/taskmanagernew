@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import SideBar from './SideBar';
 import OpgaveList from './OpgaveList';
 import './ExtraUtilities.css';
+import { Task } from './types/TaskTypes';
+
 
 function ExtraUtilities() {
   /*State til opgaverne*/
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState<Task[]>([]);
 
   /*Hent opgaver fra localStorage ved indlæsning*/
   useEffect(() => {
@@ -16,7 +18,7 @@ function ExtraUtilities() {
   }, []);
 
   /* Tilføj ny opgave og opdater localStorage*/
-  const handleAddTask = (newTask) => {
+  const handleAddTask = (newTask: Task) => {
     const updatedTasks = [...tasks, newTask];
     setTasks(updatedTasks);
     localStorage.setItem('tasks', JSON.stringify(updatedTasks));
@@ -31,42 +33,37 @@ function ExtraUtilities() {
   };
 
   /* Opdater en opgave*/
-  const handleUpdateTask = (taskId, updatedTask) => {
-    const updatedTasks = tasks.map((task) => 
-        task.id === taskId ? updatedTask : task
-    );
+  const handleUpdateTask = (taskId: string, updatedTask: Task) => {
+    const updatedTasks = tasks.map(task => (task.id === taskId ? updatedTask : task));
     setTasks(updatedTasks);
     localStorage.setItem('tasks', JSON.stringify(updatedTasks));
-};
-
+  };
 
   /* Slet opgave funktion*/
-  const handleRemoveTask = (id) => {
-    
+  const handleRemoveTask = (id: string) => {
     /*Bekræftelse af sletning*/
     const confirmDelete = window.confirm("Er du sikker på, at du vil slette denne opgave?");
     
-    /*Hvis brugeren bekræfter sletning*/
+    /*Hvis brugeren bekræfter sletning gennemføres denne*/
     if (confirmDelete) {
-      const updatedTasks = tasks.filter((task) => task.id !== id);
+      const updatedTasks = tasks.filter(task => task.id !== id);
       setTasks(updatedTasks);
-        localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+      localStorage.setItem('tasks', JSON.stringify(updatedTasks));
     }
-};
-
+  };
 
   return (
     <div style={{ display: 'flex' }}>
       <SideBar onAddTask={handleAddTask} />
       <div className="ExtraUtilities">
-      <OpgaveList 
-          tasks={tasks} 
-          onClearTasks={handleClearTasks} 
-          onUpdateTask={handleUpdateTask} 
-          onRemoveTask={handleRemoveTask}  
+        <OpgaveList
+          tasks={tasks}
+          onClearTasks={handleClearTasks}
+          onUpdateTask={handleUpdateTask}
+          onRemoveTask={handleRemoveTask}
           aria-label="Liste over opgaver"
-        />      
-        </div>
+        />
+      </div>
     </div>
   );
 }
