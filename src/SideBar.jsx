@@ -13,7 +13,7 @@ function SideBar({ onAddTask }) {
     };
 
     return (
-        <div className="SideBar">
+        <aside className="SideBar">
                         {/* Overlay som vises når popup er blevet åbnet */}
                         {isPopupOpen && <div className="overlay" onClick={togglePopup} aria-label="Luk popup"></div>}
 
@@ -37,7 +37,7 @@ function SideBar({ onAddTask }) {
 
                         {/* Popup komponenten der vises når isPopupOpen er sat til true */}
             <OpgaveInputPopUp isOpen={isPopupOpen} onClose={togglePopup} onAddTask={onAddTask} />
-        </div>
+        </aside>
     );
 }
 

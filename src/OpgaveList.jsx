@@ -66,7 +66,7 @@ function OpgaveList({ tasks, onClearTasks, onUpdateTask, onRemoveTask }) {
     };
     
     return (
-        <div className='list-wrapper'>
+        <main>
             <h3 aria-label="Liste med opgaver">Opgaveliste</h3>
 
             {/* Sorteringsknapper */}
@@ -105,7 +105,7 @@ function OpgaveList({ tasks, onClearTasks, onUpdateTask, onRemoveTask }) {
             aria-label="Ryd opgavelisten">
             Ryd opgaveliste
             </button>
-        </div>
+        </main>
     );
 }
 
