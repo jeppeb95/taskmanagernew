@@ -9,7 +9,7 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
     border: none;
-    z-index: 99999;
+    z-index: 1;
   }
   
   /* Slider cirklen */
@@ -63,7 +63,7 @@
   }
 
   /*Mobil placering af dark mode slideren*/
-  @media (max-width: 450px) {
+  @media (max-width: 900px) {
     .dark-mode-toggle {
         top: 15px;
         right: 10px;
