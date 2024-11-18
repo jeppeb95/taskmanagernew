@@ -112,7 +112,10 @@ const OpgaveItem: React.FC<OpgaveItemProps> = ({
             <div className="button-ul-wrapper">
               {/*Knap der kalder på funktionen der åbner redigering af opgaven*/}
               <button
-                onClick={() => onEditClick(task.id)}
+            onClick={(e) => {
+            e.stopPropagation(); /* Stopper klik-hændelsen fra at påvirke hele 'task-ul' */
+            onEditClick(task.id); 
+             }}                
                 className="edit-button button1"
                 aria-label="Rediger opgave"
               >
@@ -120,7 +123,10 @@ const OpgaveItem: React.FC<OpgaveItemProps> = ({
               </button>
               {/*Knap der kalder på funktionen der markerer opgaven som fuldført*/}
               <button
-                onClick={() => onCompleteTask(task.id)}
+                onClick={(e) => {
+                e.stopPropagation(); /* Stopper klik-hændelsen fra at påvirke hele 'task-ul' */
+                onCompleteTask(task.id);
+                }}                
                 className="edit-button button2"
                 aria-label="Marker opgave som fuldført"
               >
