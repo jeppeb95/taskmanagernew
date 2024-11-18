@@ -50,6 +50,7 @@ ul {
     text-align: left;
     order: 3;
     padding-bottom: 15px;
+    word-wrap: break-word;
 }
 
 /* Styling af lav prioritet */
