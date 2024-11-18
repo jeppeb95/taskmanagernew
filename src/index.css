@@ -46,6 +46,15 @@
 
 }
 
+.dark-mode .filter-dropdown, .dark-mode .filter-input{
+  background: transparent;
+  color: white; 
+}
+
+.dark-mode .filter-dropdown option {
+  background: #3b3b3b;
+}
+
 /*Generel styling af body element*/
 body {
   margin: 0;

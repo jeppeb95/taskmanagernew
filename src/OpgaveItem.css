@@ -154,7 +154,7 @@ ul {
         display: flex;
         flex-direction: column;
         padding: 20px;
-        width: 90vw;
+        width: 100%;
         align-items: flex-start;
         max-width: 650px;
         border-radius: 30px;
