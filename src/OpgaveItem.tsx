@@ -9,7 +9,7 @@ interface OpgaveItemProps {
   editedTask: Partial<Task>;
   onCompleteTask: (taskId: string) => void;
   onEditClick: (taskId: string) => void;
-  onInputChange: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
+  onInputChange: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => void;
   onSaveClick: () => void;
   onRemoveTask: (taskId: string) => void;
 }
@@ -79,7 +79,6 @@ const OpgaveItem: React.FC<OpgaveItemProps> = ({
           </select>
 
           <textarea
-            type="text"
             name="taskDescription"
             className='taskDescription-input-edit'
             value={editedTask.taskDescription || ''}

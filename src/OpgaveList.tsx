@@ -59,8 +59,8 @@ const OpgaveList: React.FC<OpgaveListProps> = ({
   };
 
     /* Håndter ændringer i inputfelterne */
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    setEditedTask({ ...editedTask, [e.target.name]: e.target.value });
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+        setEditedTask({ ...editedTask, [e.target.name]: e.target.value });
   };
 
     /* Gem de redigerede ændringer */
