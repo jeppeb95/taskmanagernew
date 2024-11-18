@@ -78,12 +78,14 @@ const OpgaveItem: React.FC<OpgaveItemProps> = ({
             <option value="Lav">Lav</option>
           </select>
 
-          <input
+          <textarea
             type="text"
             name="taskDescription"
+            className='taskDescription-input-edit'
             value={editedTask.taskDescription || ''}
             onChange={onInputChange}
             aria-label="Rediger opgavens beskrivelse"
+            placeholder='Rediger opgavebeskrivelse'
           />
 
           <div className="btn-wrapper">

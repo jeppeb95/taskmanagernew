@@ -50,8 +50,13 @@ ul {
     text-align: left;
     order: 3;
     padding-bottom: 15px;
-    word-wrap: break-word;
-    max-width: 340px;
+    word-wrap: break-word;    
+    word-break: break-word;
+    max-width: 100%;
+}
+
+.taskDescription-input-edit {
+    height: 60px;
 }
 
 /* Styling af lav prioritet */
@@ -113,6 +118,7 @@ ul {
 .btn-wrapper {
     display: flex;
     gap: 1px;
+    grid-column: 1 / -1;
 }
 
 .date-class {
