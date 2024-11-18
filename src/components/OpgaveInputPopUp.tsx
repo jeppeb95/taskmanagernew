@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './OpgaveInputPopUp.css';
+import '../styles/OpgaveInputPopUp.css';
 
 /*Definerer prop-typen for OpgaveInput-komponenten*/
 interface OpgaveInputPopUpProps {

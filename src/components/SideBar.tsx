@@ -1,4 +1,4 @@
-import './SideBar.css';
+import '../styles/SideBar.css';
 import { useState } from 'react';
 import OpgaveInputPopUp from './OpgaveInputPopUp';
 import DarkMode from './DarkMode';

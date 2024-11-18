@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Task } from './types/TaskTypes';
-import './OpgaveItem.css';
+import { Task } from '../types/TaskTypes';
+import '../styles/OpgaveItem.css';
 
 /*Definerer prop-typen for OpgaveItem-komponenten*/
 interface OpgaveItemProps {

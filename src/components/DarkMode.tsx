@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./DarkMode.css";
+import "../styles/DarkMode.css";
 
 const DarkMode: React.FC = () => {
   /*State til at holde styr på dark mode tilstand*/

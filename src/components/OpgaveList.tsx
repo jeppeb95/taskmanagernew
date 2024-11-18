@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import './OpgaveList.css';
+import '../styles/OpgaveList.css';
 import SortButtons from './SortButtons';
 import OpgaveItem from './OpgaveItem';
-import { Task } from './types/TaskTypes';
+import { Task } from '../types/TaskTypes';
 
 interface OpgaveListProps {
   tasks: Task[];

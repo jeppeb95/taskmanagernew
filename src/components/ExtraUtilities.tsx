@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import SideBar from './SideBar';
 import OpgaveList from './OpgaveList';
-import './ExtraUtilities.css';
-import { Task } from './types/TaskTypes';
+import '../styles/ExtraUtilities.css';
+import { Task } from '../types/TaskTypes';
 
 
 function ExtraUtilities() {
