@@ -41,6 +41,7 @@ const OpgaveItem: React.FC<OpgaveItemProps> = ({
       {editingIndex === task.id ? (
         <>
           {/* Inputfelter til redigering af opgave */}
+          <label htmlFor="taskTitle">Overskrift på opgaven</label>
           <input
             type="text"
             name="taskTitle"
@@ -48,6 +49,8 @@ const OpgaveItem: React.FC<OpgaveItemProps> = ({
             onChange={onInputChange}
             aria-label="Rediger opgavens titel"
           />
+
+        <label htmlFor="dueDate">Forfaldsdato</label>
           <input
             type="date"
             name="dueDate"
@@ -55,6 +58,8 @@ const OpgaveItem: React.FC<OpgaveItemProps> = ({
             onChange={onInputChange}
             aria-label="Rediger opgavens forfaldsdato"
           />
+
+        <label htmlFor="taskType">Opgavetype</label>
           <select
             name="taskType"
             value={editedTask.taskType || ''}
@@ -67,6 +72,8 @@ const OpgaveItem: React.FC<OpgaveItemProps> = ({
             <option value="Økonomi">Økonomi</option>
             <option value="Sociale aktiviteter">Sociale aktiviteter</option>
           </select>
+
+          <label htmlFor="priority">Prioritet</label>
           <select
             name="priority"
             value={editedTask.priority || ''}
@@ -78,6 +85,7 @@ const OpgaveItem: React.FC<OpgaveItemProps> = ({
             <option value="Lav">Lav</option>
           </select>
 
+          <label htmlFor="taskDescription">Beskrivelse af opgaven</label>
           <textarea
             name="taskDescription"
             className='taskDescription-input-edit'
