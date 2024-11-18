@@ -123,7 +123,7 @@ const OpgaveItem: React.FC<OpgaveItemProps> = ({
           <div className="task-title">{task.taskTitle}</div>
           <div className="date-class">
             <span>
-              <img src="svg/date-symbol.svg" alt="Piktogram af en kalender og ur" />
+              <img src="/src/assets/svg/date-symbol.svg" alt="Piktogram af en kalender og ur" />
             </span>
             {task.dueDate}
           </div>
@@ -146,7 +146,7 @@ const OpgaveItem: React.FC<OpgaveItemProps> = ({
                 className="edit-button button1"
                 aria-label="Rediger opgave"
               >
-                <img src="svg/edit.svg" alt="Rund knap med piktogram der symbolisere redigering" />
+                <img src="/src/assets/svg/edit.svg" alt="Rund knap med piktogram der symbolisere redigering" />
               </button>
               {/*Knap der kalder på funktionen der markerer opgaven som fuldført*/}
               <button
@@ -157,7 +157,7 @@ const OpgaveItem: React.FC<OpgaveItemProps> = ({
                 className="edit-button button2"
                 aria-label="Marker opgave som fuldført"
               >
-                <img src="svg/flueben.svg" alt="Rund knap med flueben" />
+                <img src="/src/assets/svg/flueben.svg" alt="Rund knap med flueben" />
               </button>
             </div>
           </div>
