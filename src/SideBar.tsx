@@ -1,6 +1,7 @@
 import './SideBar.css';
 import { useState } from 'react';
 import OpgaveInputPopUp from './OpgaveInputPopUp';
+import DarkMode from './DarkMode';
 
 /*Definerer prop-typen for SideBar-komponenten */
 interface SideBarProps {
@@ -32,6 +33,7 @@ const SideBar: React.FC<SideBarProps> = ({ onAddTask }) => {
     {/* Separator/divider mellem knappen og popup'en */}
       <div className="seperator"></div>
       <div className="circle-bg"></div>
+      <DarkMode />
     {/* Popup komponenten der vises når isPopupOpen er sat til true */}
       <OpgaveInputPopUp isOpen={isPopupOpen} onClose={togglePopup} onAddTask={onAddTask} />
     </aside>

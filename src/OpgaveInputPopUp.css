@@ -45,7 +45,8 @@ form {
 
 .button-container {
     display: flex;
-    gap: 10px;
+    gap: 2px;
+    padding-top: 10px;
 }
 
 label {
@@ -59,7 +60,7 @@ label {
     gap: 10px;
 }
 #taskDescription {
-    height: 100px;
+    height: 60px;
 }
 
 

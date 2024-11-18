@@ -5,6 +5,7 @@
   font-family: 'Poppins', sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  font-size: 16px;
 
   /* Light mode (standard) */
   --button-color: rgb(34, 34, 34);
@@ -12,8 +13,9 @@
   --theme-main-color: #003F73;
   --text-color-light: #ffffff;
   --text-color-dark: black;
-  --text-color-grey: #727272;
+  --text-color-grey: #2c2c2c;
   --background-color: #ffffff;
+  --complementary-color: #FFAB00;
 }
 
 .dark-mode {
@@ -25,6 +27,8 @@
   --text-color-dark: #ffffff;
   --text-color-grey: #ececec;
   --background-color: #3b3b3b;
+  --complementary-color: #FFAB00;
+
 }
 
 /*Gør dato-svg til hvid*/
@@ -32,19 +36,14 @@
   filter: invert(100%) sepia(0%) saturate(7428%) hue-rotate(20deg) brightness(120%) contrast(114%);
 }
 
-/*Ændre farven på box-shadow til lys på opgave-boksen*/
+/*Ændre farven på box-shadow til lys på opgave-boksen og sidebar*/
 .dark-mode .task-ul {
   box-shadow: 0 1px 10px rgba(255, 255, 255, 0.116);
 }
 
+.dark-mode .SideBar {
+  box-shadow: 2px 0 10px rgba(61, 61, 61, 0.5);
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
 }
 
 /*Generel styling af body element*/
@@ -62,7 +61,12 @@ h1 {
   line-height: 1.1;
 }
 
-/*Global styling af knapper*/
+h3 {
+  color: var(--text-color-dark);
+  font-size: 24px;
+}
+
+/*Global styling af knapper og forbedring af outline*/
 .global-button {
   background-color: var(--button-color);
   color: var(--text-color-light);
@@ -75,6 +79,11 @@ h1 {
   margin-right: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   max-height: 36px;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
 }
 
 .global-button:hover {
@@ -84,7 +93,7 @@ h1 {
 }
 
 .global-button:focus {
-  outline-color: #535bf2;
+  outline: 4px solid #535bf2;  
 }
 
 

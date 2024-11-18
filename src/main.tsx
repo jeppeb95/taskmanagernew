@@ -10,7 +10,6 @@ if (rootElement) {
   createRoot(rootElement).render(
     <StrictMode>
       <ExtraUtilities />
-      <DarkMode />
     </StrictMode>,
   );
 } else {

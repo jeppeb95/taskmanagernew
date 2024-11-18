@@ -1,0 +1,224 @@
+/*Styling af boxen som viser info om opgave*/
+.task-ul {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 3fr 0.9fr 1.7fr 0.9fr;
+    color: var(--text-color-dark);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    padding: 25px 40px 25px 20px;
+    border-radius: 50px;
+    margin-bottom: 10px;
+    width: calc(100vw - 310px);
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+} 
+
+.type-prio-wrapper {
+        display: contents;
+    }
+
+
+.task-ul li {
+    list-style-type: none;
+}
+
+ul {
+    padding: 0;
+}
+
+.task-description {
+    display: none;
+}
+
+.type-box, .priority-class {
+    background: #ccd9ff;
+    width: fit-content;
+    padding: 4px 12px;
+    border-radius: 30px;
+    color: black; 
+}
+
+.task-title {
+    font-weight: 600;
+    text-align: left;
+    font-size: 17px;
+    max-width: 100%;
+}
+
+.taskDescription {
+    text-align: left;
+    order: 3;
+    padding-bottom: 15px;
+}
+
+/* Styling af lav prioritet */
+.priority-class.lav {
+    background-color: #00B23F;
+}
+
+/* Styling af middel prioritet */
+.priority-class.middel {
+    background-color: #F2B705;
+}
+
+/* Styling af høj prioritet*/
+.priority-class.høj {
+    background-color: #FF6262;
+}
+
+/*Styling af knapperne under redigering*/
+.edit-button {
+    border: none;
+    cursor: pointer;
+    width: auto;
+    background-color: var(--theme-main-color);
+    padding: 5px;
+    border-radius: 50%;
+    display: inline-flex;
+    transition: filter 0.3s ease;
+}
+
+.edit-button:hover img {
+    filter: brightness(0) saturate(100%) invert(82%) sepia(66%) saturate(5798%) hue-rotate(358deg) brightness(102%) contrast(107%);
+
+
+}
+.edit-button img {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.2s ease-in;
+}
+
+
+.button-ul-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    flex-direction: column;
+    position: absolute;
+    right: 20px;
+    top: 50%; 
+    transform: translateY(-50%);
+}
+
+.save-btn {
+    width: fit-content;
+}
+
+
+.btn-wrapper {
+    display: flex;
+    gap: 1px;
+}
+
+.date-class {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.task-ul.completed .task-title,
+.task-ul.completed .date-class {
+    text-decoration: line-through; 
+    color: var(--text-color-grey);
+}
+
+.task-ul.completed .button2 img {
+    filter: brightness(0) saturate(100%) invert(58%) sepia(98%) saturate(608%) hue-rotate(54deg) brightness(92%) contrast(113%);
+}
+
+.task-ul .button2:hover img {
+    filter: brightness(0) saturate(100%) invert(58%) sepia(98%) saturate(608%) hue-rotate(54deg) brightness(92%) contrast(113%);
+} 
+
+
+/*Mobil styling af opgaverne*/
+
+@media (max-width: 1075px) {
+    .task-ul  {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        width: 90vw;
+        align-items: flex-start;
+        max-width: 650px;
+        border-radius: 30px;
+        gap: 12px;
+        box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .type-prio-wrapper {
+        display: flex;
+        gap: 10px;
+    }
+
+    .task-title {
+        order: 1;
+    }
+
+    .type-prio-wrapper {
+        order: 2;
+    }
+
+    .date-class {
+        order: 4;
+        gap: 5px;
+    }
+
+    .date-class img {
+        width: 18px;
+        display: block;
+    }
+    
+    .headlines-container ul, .headlines-container {
+        display: none;
+        order: 4;
+    }
+
+    .taskDescription {
+        max-width: 90%;
+    }
+
+}
+
+/*Styling af fuldfør knappen på touch enheder*/
+
+@media (hover: none) {
+    .task-ul .button2:hover img {
+        filter: none;
+    }
+
+    .task-ul.completed .button2 img {
+        filter: brightness(0) saturate(100%) invert(58%) sepia(98%) saturate(608%) hue-rotate(54deg) brightness(92%) contrast(113%);
+    }
+}
+
+@media (max-width: 600px) {
+    .task-ul .button2:hover img {
+        filter: none;
+    }
+
+    .task-ul.completed .button2 img {
+        filter: brightness(0) saturate(100%) invert(58%) sepia(98%) saturate(608%) hue-rotate(54deg) brightness(92%) contrast(113%);
+    }
+}
+
+@media (max-width: 401px) {
+    .button-ul-wrapper {
+        bottom: 0;
+        top: auto;
+        flex-direction: row;
+    }
+}
+
+    @media (max-width: 325px) {
+        .type-prio-wrapper {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+    }
+    

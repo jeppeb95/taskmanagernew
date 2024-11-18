@@ -27,6 +27,11 @@
     padding: 0; 
     width: 50px;
     height: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plusButton:hover {
+    transform: scale(1.1);
 }
 
 .plusButton span {
@@ -44,7 +49,8 @@
 }
 
 .plusButton:hover span {
-    background: #0cff71;
+    background: var(--complementary-color);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .buttonContainer {
@@ -53,12 +59,11 @@
     justify-content: center;
     align-items: center;
     gap: 4px;
-    font-size: 14px;
     padding-bottom: 20px;
 }
 .buttonContainer p {
         color: white;
-
+        margin: 0;
 }
 
 .seperator {

@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Task } from './types/TaskTypes';
-
+import './OpgaveItem.css';
 
 /*Definerer prop-typen for OpgaveItem-komponenten*/
 interface OpgaveItemProps {
@@ -25,12 +25,22 @@ const OpgaveItem: React.FC<OpgaveItemProps> = ({
   onSaveClick,
   onRemoveTask,
 }) => {
+  /* State der holder øje med om opgavebeskrivelsen er udvidet*/
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  /*Funktion der toggler en udvidelse så beskrivelsen bliver synlig */
+  const handleToggle = () => {
+    setIsExpanded(!isExpanded);
+  };
+
   return (
-    <li className={`task-ul ${task.completed ? 'completed' : ''}`}>
+    <li 
+      className={`task-ul ${task.completed ? 'completed' : ''} ${isExpanded ? 'expanded' : ''}`}
+      onClick={handleToggle} /* Når der klikkes på hele task-ul udvides den*/
+    >
       {editingIndex === task.id ? (
         <>
-        {/* Inputfelter til redigering af opgave */}
-
+          {/* Inputfelter til redigering af opgave */}
           <input
             type="text"
             name="taskTitle"
@@ -82,7 +92,7 @@ const OpgaveItem: React.FC<OpgaveItemProps> = ({
         </>
       ) : (
         <>
-            {/* Vis opgaveoplysningerne */}
+          {/* Vis opgaveoplysningerne */}
           <div className="task-title">{task.taskTitle}</div>
           <div className="date-class">
             <span>
@@ -100,7 +110,7 @@ const OpgaveItem: React.FC<OpgaveItemProps> = ({
               </div>
             </div>
             <div className="button-ul-wrapper">
-            {/*Knap der kalder på funktionen der åbner redigering af opgaven*/}
+              {/*Knap der kalder på funktionen der åbner redigering af opgaven*/}
               <button
                 onClick={() => onEditClick(task.id)}
                 className="edit-button button1"
@@ -108,7 +118,7 @@ const OpgaveItem: React.FC<OpgaveItemProps> = ({
               >
                 <img src="svg/edit.svg" alt="Rund knap med piktogram der symbolisere redigering" />
               </button>
-            {/*Knap der kalder på funktionen der markerer opgaven som fuldført*/}
+              {/*Knap der kalder på funktionen der markerer opgaven som fuldført*/}
               <button
                 onClick={() => onCompleteTask(task.id)}
                 className="edit-button button2"
@@ -118,6 +128,8 @@ const OpgaveItem: React.FC<OpgaveItemProps> = ({
               </button>
             </div>
           </div>
+          {/* Task description vises kun når opgaven er udvidet */}
+          {isExpanded && <div className="taskDescription">{task.taskDescription}</div>}
         </>
       )}
     </li>
