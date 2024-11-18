@@ -77,14 +77,32 @@ const OpgaveItem: React.FC<OpgaveItemProps> = ({
             <option value="Middel">Middel</option>
             <option value="Lav">Lav</option>
           </select>
+
+          <input
+            type="text"
+            name="taskDescription"
+            value={editedTask.taskDescription || ''}
+            onChange={onInputChange}
+            aria-label="Rediger opgavens beskrivelse"
+          />
+
           <div className="btn-wrapper">
-            <button onClick={onSaveClick} className="save-btn global-button" aria-label="Gem opgave">
+            <button 
+            onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+            e.stopPropagation(); /* Stopper klik-hændelsen fra at påvirke hele 'task-ul' */
+            onSaveClick();
+            }}
+            className="save-btn global-button" 
+            aria-label="Gem opgave">
               Gem
             </button>
             <button
-              onClick={() => onRemoveTask(task.id)}
-              className="delete-btn global-button"
-              aria-label="Slet opgave"
+             onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+            e.stopPropagation();
+            onRemoveTask(task.id);
+            }}
+            className="delete-btn global-button"
+            aria-label="Slet opgave"
             >
               Slet
             </button>
@@ -112,7 +130,7 @@ const OpgaveItem: React.FC<OpgaveItemProps> = ({
             <div className="button-ul-wrapper">
               {/*Knap der kalder på funktionen der åbner redigering af opgaven*/}
               <button
-            onClick={(e) => {
+            onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
             e.stopPropagation(); /* Stopper klik-hændelsen fra at påvirke hele 'task-ul' */
             onEditClick(task.id); 
              }}                
@@ -123,7 +141,7 @@ const OpgaveItem: React.FC<OpgaveItemProps> = ({
               </button>
               {/*Knap der kalder på funktionen der markerer opgaven som fuldført*/}
               <button
-                onClick={(e) => {
+                onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
                 e.stopPropagation(); /* Stopper klik-hændelsen fra at påvirke hele 'task-ul' */
                 onCompleteTask(task.id);
                 }}                
