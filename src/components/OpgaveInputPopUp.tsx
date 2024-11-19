@@ -69,7 +69,6 @@ const OpgaveInputPopUp: React.FC<OpgaveInputPopUpProps> = ({ isOpen, onClose, on
                 value={formValues.priority}
                 onChange={handleChange}
                 required
-                aria-label="Vælg opgavens prioritet"
               >
                 <option value="" disabled hidden>Vælg prioritet</option>
                 <option value="Lav">Lav</option>
@@ -86,7 +85,6 @@ const OpgaveInputPopUp: React.FC<OpgaveInputPopUpProps> = ({ isOpen, onClose, on
                 value={formValues.dueDate}
                 onChange={handleChange}
                 required
-                aria-label="Vælg opgavens forfaldsdato"
               />
             </div>
           </div>
@@ -97,7 +95,6 @@ const OpgaveInputPopUp: React.FC<OpgaveInputPopUpProps> = ({ isOpen, onClose, on
             value={formValues.taskType}
             onChange={handleChange}
             required
-            aria-label="Vælg opgavens type"
           >
             <option value="" disabled hidden>Vælg opgavetype</option>
             <option value="Personlige opgaver">Personlige opgaver</option>
@@ -115,7 +112,6 @@ const OpgaveInputPopUp: React.FC<OpgaveInputPopUpProps> = ({ isOpen, onClose, on
             value={formValues.taskTitle}
             onChange={handleChange}
             required
-            aria-label="Skriv opgavens overskrift"
           />
 
           <label htmlFor="taskDescription">Beskrivelse af opgaven</label>
@@ -125,7 +121,6 @@ const OpgaveInputPopUp: React.FC<OpgaveInputPopUpProps> = ({ isOpen, onClose, on
             value={formValues.taskDescription}
             onChange={handleChange}
             rows={5}
-            aria-label="Skriv beskrivelse af opgaven"
           ></textarea>
 
           {/* Knapper til at oprette og lukke opgaven */}
