@@ -44,6 +44,8 @@ ul {
     text-align: left;
     font-size: 17px;
     max-width: 100%;
+    word-wrap: break-word;    
+    word-break: break-word;
 }
 
 .taskDescription {
