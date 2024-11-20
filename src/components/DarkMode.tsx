@@ -38,8 +38,8 @@ const DarkMode: React.FC = () => {
       aria-label="Skift mellem mørk og lys tilstand"
     >
       <span className="slider">
-        <img src="/src/assets/svg/moon.svg" alt="Piktogram af måne" id="moon" />
-        <img src="/src/assets/svg/sun.svg" alt="Piktogram af sol" id="sun" />
+        <img src="./assets/svg/moon.svg" alt="Piktogram af måne" id="moon" />
+        <img src="./assets/svg/sun.svg" alt="Piktogram af sol" id="sun" />
       </span>
     </button>
   );

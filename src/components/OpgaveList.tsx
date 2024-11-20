@@ -10,27 +10,26 @@ interface OpgaveListProps {
   onUpdateTask: (taskId: string, updatedTask: Task) => void;
   onRemoveTask: (taskId: string) => void;
 }
-
 const OpgaveList: React.FC<OpgaveListProps> = ({
   tasks,
   onClearTasks,
   onUpdateTask,
   onRemoveTask,
 }) => {
-
-/*State til håndtering redigering*/
+  
+  /* State til håndtering af redigering */
   const [editingIndex, setEditingIndex] = useState<string | null>(null);
 
-  /*State til lagring af den redigerede opgaves data*/
+  /* State til lagring af den redigerede opgaves data */
   const [editedTask, setEditedTask] = useState<Partial<Task>>({});
 
-  /*State til sortering og filtrering af opgaver */
+  /* State til sortering og filtrering af opgaver */
   const [sortCriteria, setSortCriteria] = useState<string | null>(null);
   const [filterType, setFilterType] = useState<string | null>(null);
   const [filterPriority, setFilterPriority] = useState<string | null>(null);
   const [filterDate, setFilterDate] = useState<string | null>(null);
 
-  /*Filtrering af opgaverne*/
+  /* Filtrering af opgaverne */
   const filteredTasks = tasks.filter(task => {
     const matchesType = filterType ? task.taskType === filterType : true;
     const matchesPriority = filterPriority ? task.priority === filterPriority : true;
@@ -38,13 +37,8 @@ const OpgaveList: React.FC<OpgaveListProps> = ({
     return matchesType && matchesPriority && matchesDate;
   });
 
-    /* Funktion der sorterer opgaverne ud fra dato, prioritet og type samt efter om de er markeret som completed*/
-    const sortedTasks = [...filteredTasks].sort((a, b) => {
-    if (a.completed !== b.completed) {
-      return a.completed ? 1 : -1;
-    }
-
-    /*Sorter derefter for enten dato, prioritet eller type alt efter hvad der vælges*/
+  /* Sorter opgaverne baseret på det valgte kriterium */
+  const sortedTasks = [...filteredTasks].sort((a, b) => {
     if (sortCriteria === 'dato') {
       return new Date(a.dueDate).getTime() - new Date(b.dueDate).getTime();
     } else if (sortCriteria === 'prioritet') {
@@ -53,10 +47,17 @@ const OpgaveList: React.FC<OpgaveListProps> = ({
     } else if (sortCriteria === 'type') {
       return (a.taskType || '').localeCompare(b.taskType || '');
     }
-    return 0;
+    return 0; // Hvis ingen sorteringskriterium er valgt, bevares den oprindelige rækkefølge
   });
 
-      /* Funktion til at markere opgaven som fuldført */
+  /* Opdel opgaverne i completed og ikke-completed */
+  const nonCompletedTasks = sortedTasks.filter(task => !task.completed);
+  const completedTasks = sortedTasks.filter(task => task.completed);
+
+  /* Kombiner opgaverne, så completed opgaver kommer til sidst */
+  const tasksToDisplay = [...nonCompletedTasks, ...completedTasks];
+
+  /* Funktion til at markere opgaven som fuldført */
   const handleCompleteTask = (taskId: string) => {
     const taskToUpdate = tasks.find(task => task.id === taskId);
     if (taskToUpdate) {
@@ -65,7 +66,7 @@ const OpgaveList: React.FC<OpgaveListProps> = ({
     }
   };
 
-      /* Åbn redigering af opgave */
+  /* Åbn redigering af opgave */
   const handleEditClick = (taskId: string) => {
     const task = tasks.find(t => t.id === taskId);
     if (task) {
@@ -74,12 +75,12 @@ const OpgaveList: React.FC<OpgaveListProps> = ({
     }
   };
 
-      /* Håndter ændringer i inputfelterne */
+  /* Håndter ændringer i inputfelterne */
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setEditedTask({ ...editedTask, [e.target.name]: e.target.value });
   };
 
-      /* Gem de redigerede ændringer */
+  /* Gem de redigerede ændringer */
   const handleSaveClick = () => {
     if (editedTask.id) {
       onUpdateTask(editedTask.id, editedTask as Task);
@@ -91,7 +92,7 @@ const OpgaveList: React.FC<OpgaveListProps> = ({
     <main>
       <h3 aria-label="Liste med opgaver">Opgaveliste</h3>
 
-        {/* Sorteringsknapper */}
+      {/* Sorteringsknapper */}
       <SortButtons setSortCriteria={setSortCriteria} aria-label="Sortér opgaver" />
 
       {/* Filtreringsdropdowns */}
@@ -99,7 +100,7 @@ const OpgaveList: React.FC<OpgaveListProps> = ({
         onChange={(e) => setFilterType(e.target.value)}
         value={filterType || ''}
         aria-label="Filtrer opgaver efter type"
-        className='filter-dropdown'
+        className="filter-dropdown"
       >
         <option value="">Alle typer</option>
         <option value="Personlige opgaver">Personlige opgaver</option>
@@ -113,7 +114,7 @@ const OpgaveList: React.FC<OpgaveListProps> = ({
         onChange={(e) => setFilterPriority(e.target.value)}
         value={filterPriority || ''}
         aria-label="Filtrer opgaver efter prioritet"
-        className='filter-dropdown'
+        className="filter-dropdown"
       >
         <option value="">Alle prioriteringer</option>
         <option value="Høj">Høj</option>
@@ -126,18 +127,16 @@ const OpgaveList: React.FC<OpgaveListProps> = ({
         onChange={(e) => setFilterDate(e.target.value)}
         value={filterDate || ''}
         aria-label="Filtrer opgaver efter dato"
-        className='filter-input'
+        className="filter-input"
       />
 
-
-        {/* Den øverste bjælke med overskrift og sorteringsfunktionalitet */}
+      {/* Den øverste bjælke med overskrift og sorteringsfunktionalitet */}
       <div className="headlines-container">
         <ul>
           <li className="description-element" aria-label="Opgaveoverskrift">
             Overskrift
           </li>
           <li>
-            {/* Knapper der kalder på SortCriteria og sortere efter henholdsvis, dato, type og prioritet */}
             <button onClick={() => setSortCriteria('dato')} aria-label="Sortér efter dato">
               Dato
             </button>
@@ -156,7 +155,7 @@ const OpgaveList: React.FC<OpgaveListProps> = ({
       </div>
 
       <ul className="tasks-list">
-        {sortedTasks.map(task => (
+        {tasksToDisplay.map((task) => (
           <OpgaveItem
             key={task.id}
             task={task}
@@ -171,7 +170,7 @@ const OpgaveList: React.FC<OpgaveListProps> = ({
         ))}
       </ul>
 
-         {/* Knap der kalder på funktionen der rydder opgavelisten */}
+      {/* Knap der kalder på funktionen der rydder opgavelisten */}
       <button
         className="clearButton global-button"
         onClick={onClearTasks}
