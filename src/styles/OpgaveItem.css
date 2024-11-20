@@ -27,9 +27,6 @@ ul {
     padding: 0;
 }
 
-.task-description {
-    display: none;
-}
 
 .type-box, .priority-class {
     background: #ccd9ff;
