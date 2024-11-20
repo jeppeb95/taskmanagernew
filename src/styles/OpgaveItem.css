@@ -130,7 +130,8 @@ ul {
 }
 
 .task-ul.completed .task-title,
-.task-ul.completed .date-class {
+.task-ul.completed .date-class,
+.task-ul.completed .taskDescription {
     text-decoration: line-through; 
     color: var(--text-color-grey);
 }
