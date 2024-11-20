@@ -171,6 +171,7 @@ ul {
 
     .task-title {
         order: 1;
+        max-width: 90%;
     }
 
     .type-prio-wrapper {
