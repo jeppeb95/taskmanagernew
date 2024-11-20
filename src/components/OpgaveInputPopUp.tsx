@@ -102,6 +102,7 @@ const OpgaveInputPopUp: React.FC<OpgaveInputPopUpProps> = ({ isOpen, onClose, on
             <option value="Studieopgaver">Studieopgaver</option>
             <option value="Økonomi">Økonomi</option>
             <option value="Sociale aktiviteter">Sociale aktiviteter</option>
+            <option value="Øvrige">Øvrige</option>
           </select>
 
           <label htmlFor="taskTitle">Overskrift på opgaven</label>

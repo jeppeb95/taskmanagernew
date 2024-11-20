@@ -108,6 +108,7 @@ const OpgaveList: React.FC<OpgaveListProps> = ({
         <option value="Studieopgaver">Studieopgaver</option>
         <option value="Økonomi">Økonomi</option>
         <option value="Sociale aktiviteter">Sociale aktiviteter</option>
+        <option value="Øvrige">Øvrige</option>
       </select>
 
       <select
