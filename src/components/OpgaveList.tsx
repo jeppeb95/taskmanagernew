@@ -47,7 +47,7 @@ const OpgaveList: React.FC<OpgaveListProps> = ({
     } else if (sortCriteria === 'type') {
       return (a.taskType || '').localeCompare(b.taskType || '');
     }
-    return 0; // Hvis ingen sorteringskriterium er valgt, bevares den oprindelige rækkefølge
+    return 0; 
   });
 
   /* Opdel opgaverne i completed og ikke-completed */
