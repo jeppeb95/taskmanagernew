@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/*Globale farver for task-manageren*/
+/*Globale styles for task-manageren*/
 :root {
   font-family: 'Poppins', sans-serif;
   line-height: 1.5em;
@@ -41,6 +41,7 @@
   box-shadow: 0 1px 10px rgba(255, 255, 255, 0.116);
 }
 
+/* dark-mode styles */
 .dark-mode .SideBar {
   box-shadow: 2px 0 10px rgba(61, 61, 61, 0.5);
 
