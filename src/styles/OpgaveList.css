@@ -13,6 +13,11 @@
     align-items: center;
 }
 
+/* Styling af container for ryd knapperne */
+.clear-button-container {
+    display: flex;
+}
+
 
 
 /*Styling af den usynlige box hvori kategorierne/overskrifterne vises*/

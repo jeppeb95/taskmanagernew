@@ -8,6 +8,7 @@ import { Task } from '../types/TaskTypes';
 interface OpgaveListProps {
   tasks: Task[];
   onClearTasks: () => void;
+  onClearCompletedTasks: () => void;
   onUpdateTask: (taskId: string, updatedTask: Task) => void;
   onRemoveTask: (taskId: string) => void;
 }
@@ -16,6 +17,7 @@ interface OpgaveListProps {
 const OpgaveList: React.FC<OpgaveListProps> = ({
   tasks,
   onClearTasks,
+  onClearCompletedTasks,
   onUpdateTask,
   onRemoveTask,
 }) => {
@@ -174,14 +176,26 @@ const OpgaveList: React.FC<OpgaveListProps> = ({
         ))}
       </ul>
 
-      {/* Knap der kalder på funktionen der rydder opgavelisten */}
+
+        <div className='clear-button-container'>
+      {/* Knap der kalder på funktionen der rydder opgavelisten (hentet via props fra ExtraUtilities) */}
       <button
         className="clearButton global-button"
         onClick={onClearTasks}
         aria-label="Slet alle opgaver"
       >
-        Ryd opgavelisten
+        Ryd alle
       </button>
+
+      {/* Knap der kalder på funktionen der rydder færdiggjorte opgaver (hentet via props fra ExtraUtilities) */}
+      <button 
+      className="clearButton global-button"
+      onClick={onClearCompletedTasks}
+      aria-label="Slet alle færdiggjorte opgaver"
+      >Ryd færdige
+      </button>
+      </div>
+
     </main>
   );
 };

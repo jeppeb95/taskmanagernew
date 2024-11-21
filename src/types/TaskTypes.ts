@@ -1,4 +1,4 @@
-/*Definerer typen for en opgave */
+/*Definerer typer for task */
 export interface Task {
     id: string;
     taskTitle: string;

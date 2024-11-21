@@ -32,6 +32,16 @@ function ExtraUtilities() {
     }
   };
 
+  /* Ryd færdiggjorte opgaver */
+const handleClearCompletedTasks = () => {
+  if (window.confirm("Er du sikker på, at du vil rydde alle færdiggjorte opgaver?")) {
+    const remainingTasks = tasks.filter(task => !task.completed);
+    setTasks(remainingTasks);
+    localStorage.setItem('tasks', JSON.stringify(remainingTasks));
+  }
+};
+
+
   /* Opdater en opgave*/
   const handleUpdateTask = (taskId: string, updatedTask: Task) => {
     const updatedTasks = tasks.map(task => (task.id === taskId ? updatedTask : task));
@@ -59,6 +69,7 @@ function ExtraUtilities() {
         <OpgaveList
           tasks={tasks}
           onClearTasks={handleClearTasks}
+          onClearCompletedTasks={handleClearCompletedTasks}
           onUpdateTask={handleUpdateTask}
           onRemoveTask={handleRemoveTask}
           aria-label="Liste over opgaver"
