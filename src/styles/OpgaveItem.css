@@ -141,10 +141,6 @@ ul {
     filter: brightness(0) saturate(100%) invert(58%) sepia(98%) saturate(608%) hue-rotate(54deg) brightness(92%) contrast(113%);
 } 
 
-.task-ul label {
-    display: none;
-}
-
 
 /*Mobil styling af opgaverne*/
 

@@ -40,28 +40,28 @@ const OpgaveItem: React.FC<OpgaveItemProps> = ({
     >
       {editingIndex === task.id ? (
         <>
-          {/* Inputfelter til redigering af opgave */}
-          <label htmlFor="taskTitle">Rediger overskrift på opgaven</label>
+          {/* Inputfelter til redigering af opgave aria label tilføjet i stedet for alm label */}
           <input
             type="text"
             name="taskTitle"
             value={editedTask.taskTitle || ''}
             onChange={onInputChange}
+            aria-label="Rediger overskrift på opgaven"
           />
 
-        <label htmlFor="dueDate">Redidger opgavens forfaldsdato</label>
           <input
             type="date"
             name="dueDate"
             value={editedTask.dueDate || ''}
             onChange={onInputChange}
+            aria-label="Rediger opgavens forfaldsdato"
           />
 
-        <label htmlFor="taskType">Vælg opgavetype</label>
           <select
             name="taskType"
             value={editedTask.taskType || ''}
             onChange={onInputChange}
+            aria-label="Rediger opgavetype"
           >
             <option value="Personlige opgaver">Personlige opgaver</option>
             <option value="Arbejdsopgaver">Arbejdsopgaver</option>
@@ -70,24 +70,25 @@ const OpgaveItem: React.FC<OpgaveItemProps> = ({
             <option value="Sociale aktiviteter">Sociale aktiviteter</option>
           </select>
 
-          <label htmlFor="priority">Vælg proritet</label>
           <select
             name="priority"
             value={editedTask.priority || ''}
             onChange={onInputChange}
+            aria-label="Rediger opgavens prioritet"
+
           >
             <option value="Høj">Høj</option>
             <option value="Middel">Middel</option>
             <option value="Lav">Lav</option>
           </select>
 
-          <label htmlFor="taskDescription">Rediger opgavebeskrivelse</label>
           <textarea
             name="taskDescription"
             className='taskDescription-input-edit'
             value={editedTask.taskDescription || ''}
             onChange={onInputChange}
             placeholder='Rediger opgavebeskrivelse'
+            aria-label="Rediger opgavebeskrivelse"
           />
 
           <div className="btn-wrapper">
