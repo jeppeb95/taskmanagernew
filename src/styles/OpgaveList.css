@@ -30,6 +30,11 @@
 
 .headlines-container {
     color: var(--text-color-grey);
+
+}
+
+.headlines-container button {
+    font-family: 'Poppins', sans-serif;
 }
 
 .headlines-container ul li button {
