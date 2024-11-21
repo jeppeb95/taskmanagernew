@@ -12,6 +12,7 @@
     text-align: center;
     position: relative;
     cursor: pointer;
+    
 } 
 
 .type-prio-wrapper {
@@ -45,7 +46,7 @@ ul {
     word-break: break-word;
 }
 
-.taskDescription {
+.task-description {
     text-align: left;
     order: 3;
     padding-bottom: 15px;
@@ -53,6 +54,7 @@ ul {
     word-break: break-word;
     max-width: 100%;
 }
+
 
 .taskDescription-input-edit {
     height: 60px;
@@ -128,7 +130,7 @@ ul {
 
 .task-ul.completed .task-title,
 .task-ul.completed .date-class,
-.task-ul.completed .taskDescription {
+.task-ul.completed .task-description {
     text-decoration: line-through; 
     color: var(--text-color-grey);
 }
@@ -187,7 +189,7 @@ ul {
         order: 4;
     }
 
-    .taskDescription {
+    .task-description {
         max-width: 85%;
     }
 

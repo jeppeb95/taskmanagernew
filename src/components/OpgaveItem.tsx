@@ -94,7 +94,7 @@ const OpgaveItem: React.FC<OpgaveItemProps> = ({
           <div className="btn-wrapper">
             <button 
             onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-            e.stopPropagation(); /* Stopper klik-hændelsen fra at påvirke hele 'task-ul' */
+            e.stopPropagation(); /* Stopper klik fra at påvirke hele 'task-ul' */
             onSaveClick();
             }}
             className="save-btn global-button" 
@@ -158,7 +158,7 @@ const OpgaveItem: React.FC<OpgaveItemProps> = ({
             </div>
           </div>
           {/* Task description vises kun når opgaven er udvidet */}
-          {isExpanded && <div className="taskDescription">{task.taskDescription}</div>}
+          {isExpanded && <div className="task-description">{task.taskDescription}</div>}
         </>
       )}
     </li>

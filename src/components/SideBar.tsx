@@ -24,7 +24,10 @@ const SideBar: React.FC<SideBarProps> = ({ onAddTask }) => {
       {isPopupOpen && <div className="overlay" onClick={togglePopup} aria-label="Luk popup"></div>}
      {/* Knap til at åbne popup for at tilføje opgaver */}
       <div className="buttonContainer">
-        <button className="plusButton" onClick={togglePopup} aria-label="Tilføj ny opgave">
+        <button className="plusButton" 
+        onClick={togglePopup} 
+        aria-label="Tilføj ny opgave"
+        >
           <span></span>
           <span className="vertikal"></span>
         </button>
