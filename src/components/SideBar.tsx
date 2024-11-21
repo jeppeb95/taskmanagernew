@@ -3,7 +3,7 @@ import { useState } from 'react';
 import OpgaveInputPopUp from './OpgaveInputPopUp';
 import DarkMode from './DarkMode';
 
-/*Definerer prop-typen for SideBar-komponenten */
+/*Definerer props for SideBar-komponenten */
 interface SideBarProps {
   onAddTask: (task: any) => void;
 }

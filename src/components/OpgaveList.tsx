@@ -4,12 +4,15 @@ import SortButtons from './SortButtons';
 import OpgaveItem from './OpgaveItem';
 import { Task } from '../types/TaskTypes';
 
+/*Definere de props som modtages og behandles i OpgaveList*/
 interface OpgaveListProps {
   tasks: Task[];
   onClearTasks: () => void;
   onUpdateTask: (taskId: string, updatedTask: Task) => void;
   onRemoveTask: (taskId: string) => void;
 }
+
+/* OpgaveList-komponenten håndterer opgavelisten, herunder visning, opdatering, sletning og oprydning af opgaver. */
 const OpgaveList: React.FC<OpgaveListProps> = ({
   tasks,
   onClearTasks,

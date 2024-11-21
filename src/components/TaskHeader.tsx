@@ -1,6 +1,6 @@
 import React from 'react';
 
-/*Definerer prop-typen for TaskHeader-komponenten */
+/*Definerer props for TaskHeader-komponenten */
 interface TaskHeaderProps {
   setSortCriteria: (criteria: string) => void;
 }

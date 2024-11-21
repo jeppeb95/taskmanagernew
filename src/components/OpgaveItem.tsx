@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Task } from '../types/TaskTypes';
 import '../styles/OpgaveItem.css';
 
-/*Definerer prop-typen for OpgaveItem-komponenten*/
+/*Definerer de props, som 'OpgaveItem' komponenten modtager*/
 interface OpgaveItemProps {
   task: Task;
   editingIndex: string | null;

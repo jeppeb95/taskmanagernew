@@ -1,6 +1,6 @@
 import React from 'react';
 
-/*Definerer prop-typen for Sortbuttons-komponenten */
+/*Definerer props for Sortbuttons-komponenten */
 interface SortButtonsProps {
   setSortCriteria: (criteria: string) => void;
 }
